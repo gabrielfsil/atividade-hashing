@@ -44,7 +44,6 @@ void Diretorio::inserir(int valor)
     string pseudochave = converteEmBinario(chave, bits);
 
     // Obtém profundidade do diretório
-    cout << pseudochave << endl;
     // Obtém os d bits mais a esquerda da pseudochave
     string dBits = "";
 
@@ -62,7 +61,7 @@ void Diretorio::inserir(int valor)
         {
             // Insere a pseudochave
             diretorio[indiceBalde]->inserir(pseudochave);
-            cout << "Chave inserida com sucesso!" << endl;
+            
         }
         // Senão
         else
@@ -211,12 +210,12 @@ void Diretorio::redistribuir(int balde, int novoBalde, string chave)
     if (verificaChave(chave, dBitsNovoBalde))
     {
         diretorio[novoBalde]->inserir(chave);
-        cout << "Chave inserida com sucesso!" << endl;
+        
     }
     else
     {
         diretorio[balde]->inserir(chave);
-        cout << "Chave inserida com sucesso!" << endl;
+        
     }
 
     delete[] removerChaves;
